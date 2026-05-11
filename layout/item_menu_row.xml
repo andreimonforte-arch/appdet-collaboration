@@ -10,15 +10,15 @@
     android:clickable="true"
     android:focusable="true">
 
-    <!-- Icon -->
+    <!-- LEFT ICON -->
     <ImageView
         android:id="@+id/menuIcon"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/ic_placeholder"
-        android:tint="#666666" />
+        android:src="@drawable/ic_person"
+        android:contentDescription="Menu icon" />
 
-    <!-- Label -->
+    <!-- LABEL -->
     <TextView
         android:id="@+id/menuLabel"
         android:layout_width="0dp"
@@ -29,11 +29,13 @@
         android:textSize="16sp"
         android:textColor="#333333" />
 
-    <!-- Arrow -->
+    <!-- RIGHT ARROW -->
     <ImageView
+        android:id="@+id/menuArrow"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/ic_chevron_right"
-        android:tint="#999999" />
+        android:contentDescription="Navigate" />
 
 </LinearLayout>
