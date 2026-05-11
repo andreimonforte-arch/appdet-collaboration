@@ -109,11 +109,7 @@
                 <!-- Send feedback -->
                 <include layout="@layout/item_menu_row"
                     android:id="@+id/itemSendFeedback" />
-
-                <!-- Apply to become a Pro -->
-                <include layout="@layout/item_menu_row"
-                    android:id="@+id/itemBecomePro" />
-
+                
                 <!-- Log out -->
                 <include layout="@layout/item_menu_row"
                     android:id="@+id/itemLogout" />
@@ -128,7 +124,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="16dp"
-                android:text="v10.0.4 (11167)"
+                android:text="v11.1.1 (11111)"
                 android:textSize="14sp"
                 android:textColor="#999999" />
 
