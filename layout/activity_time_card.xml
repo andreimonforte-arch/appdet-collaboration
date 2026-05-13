@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:orientation="horizontal"
+    android:padding="15dp">
+
+    <!-- LEFT SIDE: Calendar -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Month/Year Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2E75B6"
+            android:padding="8dp"
+            android:gravity="center">
+
+            <Spinner
+                android:id="@+id/monthSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/tvYearDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2026"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="5dp"/>
+        </LinearLayout>
+
+        <!-- Day Headers -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="7"
+            android:background="#BDD7EE">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="S"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="16dp"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="M"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+            <TextView android:layout_width="0dp" android:layout_columnWeight="1" android:text="T" android:textColor="#000000" android:textStyle="bold" android:gravity="center" android:padding="10dp"/>
+            <TextView android:layout_width="0dp" android:layout_columnWeight="1" android:text="W" android:textColor="#000000" android:textStyle="bold" android:gravity="center" android:padding="10dp"/>
+            <TextView android:layout_width="0dp" android:layout_columnWeight="1" android:text="T" android:textColor="#000000" android:textStyle="bold" android:gravity="center" android:padding="10dp"/>
+            <TextView android:layout_width="0dp" android:layout_columnWeight="1" android:text="F" android:textColor="#000000" android:textStyle="bold" android:gravity="center" android:padding="10dp"/>
+            <TextView android:layout_width="0dp" android:layout_columnWeight="1" android:text="S" android:textColor="#000000" android:textStyle="bold" android:gravity="center" android:padding="10dp"/>
+        </GridLayout>
+
+        <!-- Calendar Grid -->
+        <GridLayout
+            android:id="@+id/calendarGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="7"
+            android:background="#DEEAF6"
+            android:padding="1dp">
+        </GridLayout>
+    </LinearLayout>
+
+    <!-- RIGHT SIDE: Date, Month, Time Selectors -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp">
+
+        <!-- Filter Label -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter by:"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Month & Year Spinners Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <!-- Month Spinner -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_spinner_dark"
+                android:layout_marginEnd="8dp">
+
+                <Spinner
+                    android:id="@+id/filterMonthSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:paddingHorizontal="12dp" />
+            </FrameLayout>
+
+            <!-- Year Spinner -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_spinner_dark">
+
+                <Spinner
+                    android:id="@+id/filterYearSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:paddingHorizontal="12dp" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Selected Date Display -->
+        <TextView
+            android:id="@+id/tvSelectedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected: Dec 7, 2026"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Time Selector Label -->
+
+        <!-- Time Slots Grid -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Select Time:"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <GridLayout
+            android:id="@+id/timeGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:layout_marginBottom="16dp">
+
+            <!-- Time slots generated programmatically -->
+        </GridLayout>
+
+        <!-- Confirm Button -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnConfirmDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Confirm Selection"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF9800" />
+
+    </LinearLayout>
+
+</LinearLayout>

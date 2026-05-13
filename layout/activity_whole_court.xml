@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="16dp">
+
+    <!-- Full Width Image -->
+    <FrameLayout
+        android:layout_width="200dp"
+        android:layout_height="160dp">
+
+        <ImageView
+            android:id="@+id/imgWholeCourt"
+            android:layout_width="197dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_wholecourt_image"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_court_5v5" />
+
+        <!-- Team Badge -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_margin="12dp"
+            android:background="#E53935"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="TEAM ONLY"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <!-- Capacity Badge -->
+        <TextView
+            android:id="@+id/tvWholeCapacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="12dp"
+            android:background="#80000000"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="10 players"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <!-- Info Row -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="99dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvWholeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Whole Court 5v5"
+                android:textColor="#1A1A1A"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Full court • Book as team"
+                android:textColor="#999999"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvWholePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₱2800"
+            android:textColor="#1A1A1A"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Book Team Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBookWhole"
+        android:layout_width="184dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#1A1A1A"
+        android:text="Book Team Slot"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+</LinearLayout>
