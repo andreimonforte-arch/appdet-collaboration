@@ -122,7 +122,7 @@
                         android:layout_height="64dp"
                         android:layout_gravity="center"
                         android:alpha="0.3"
-                        android:src="@drawable/ic_calendar_empty" />
+                        android:src="@drawable/ic_calendar_24dp" />
                 </FrameLayout>
 
                 <TextView
@@ -149,7 +149,7 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnBookNow"
                     android:layout_width="200dp"
-                    android:layout_height="48dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/rounded_button_yellow"
                     android:text="Book now"
                     android:textAllCaps="false"
