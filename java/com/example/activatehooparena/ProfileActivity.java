@@ -9,13 +9,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.activatehooparena.data.local.SessionManager;
+import com.google.android.datatransport.backend.cct.BuildConfig;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView tvAvatarInitial, tvUserName, tvUserEmail, tvVersion;
-    private View itemAccountDetails, itemSettings, itemSupport,
-            itemRateApp, itemFeedback, itemLogout;
+    private View itemAccountDetails, itemSettings, itemRateApp, itemFeedback, itemLogout;
     private BottomNavigationView bottomNav;
 
     @Override
@@ -36,7 +36,6 @@ public class ProfileActivity extends AppCompatActivity {
         tvVersion = findViewById(R.id.tvVersion);
         itemAccountDetails = findViewById(R.id.itemAccountDetails);
         itemSettings = findViewById(R.id.item_menu_settings_row);
-        itemSupport = findViewById(R.id.item_menu_support_row);
         itemRateApp = findViewById(R.id.item_menu_rate_the_app_row);
         itemFeedback = findViewById(R.id.item_menu_send_feedback_row);
         itemLogout = findViewById(R.id.item_logout_row);
@@ -51,12 +50,13 @@ public class ProfileActivity extends AppCompatActivity {
         tvUserName.setText(name);
         tvUserEmail.setText(email);
 
+        // Use your app's BuildConfig (same package, no import needed)
+        String versionText = "v" + BuildConfig.VERSION_NAME + " (" + BuildConfig.VERSION_CODE + ")";
+        tvVersion.setText(versionText);
+
         if (!name.isEmpty()) {
             tvAvatarInitial.setText(String.valueOf(name.charAt(0)).toUpperCase());
         }
-        // Use your app's BuildConfig
-        tvVersion.setText("v" + BuildInfoActivity.CAPTIONING_SERVICE +
-                " (" + BuildInfoActivity.RESULT_OK + ")");
     }
 
     private void setupMenuClicks() {
@@ -103,10 +103,7 @@ public class ProfileActivity extends AppCompatActivity {
             } else if (itemId == R.id.nav_bookings) {
                 navigateTo(BookingsActivity.class);
                 return true;
-            } else if (itemId == R.id.nav_menu) {
-                return true;
-            }
-            return false;
+            } else return itemId == R.id.nav_menu;
         });
     }
 
@@ -116,6 +113,6 @@ public class ProfileActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private class SettingsActivity {
+    private static class SettingsActivity {
     }
 }
