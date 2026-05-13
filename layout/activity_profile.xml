@@ -31,7 +31,7 @@
                 <FrameLayout
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/circle_avatar_yellow">
+                    android:background="@drawable/bg_avatar_yellow">
 
                     <TextView
                         android:id="@+id/tvAvatarInitial"
@@ -46,28 +46,28 @@
 
                 <!-- User Info -->
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="63dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginStart="16dp">
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/tvUserName"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="NAME"
+                        android:textColor="#1A1A1A"
                         android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="#1A1A1A" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvUserEmail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="2dp"
                         android:text="gmail.com"
-                        android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="2dp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -79,41 +79,29 @@
                 android:orientation="vertical">
 
                 <!-- Account details -->
-                <include layout="@layout/item_menu_row"
-                    android:id="@+id/itemAccountDetails" />
-
-                <!-- Messages -->
-                <include layout="@layout/item_menu_row"
-                    android:id="@+id/itemMessages" />
-
-                <!-- Refer a friend -->
-                <include layout="@layout/item_menu_row"
-                    android:id="@+id/itemReferFriend" />
-
-                <!-- Wallet -->
-                <include layout="@layout/item_menu_row"
-                    android:id="@+id/itemWallet" />
+                <include
+                    android:id="@+id/itemAccountDetails"
+                    layout="@layout/item_menu_account_details_row" />
 
                 <!-- Settings -->
-                <include layout="@layout/item_menu_row"
-                    android:id="@+id/itemSettings" />
+                <include layout="@layout/item_menu_settings_row"
+                    android:id="@+id/item_menu_settings_row" />
 
                 <!-- Support -->
-                <include layout="@layout/item_menu_row"
-                    android:id="@+id/itemSupport" />
+                <include layout="@layout/item_menu_support_row"
+                    android:id="@+id/item_menu_support_row" />
 
                 <!-- Rate the app -->
-                <include layout="@layout/item_menu_row"
-                    android:id="@+id/itemRateApp" />
+                <include layout="@layout/item_menu_rate_the_app_row"
+                    android:id="@+id/item_menu_rate_the_app_row" />
 
                 <!-- Send feedback -->
-                <include layout="@layout/item_menu_row"
-                    android:id="@+id/itemSendFeedback" />
-                
-                <!-- Log out -->
-                <include layout="@layout/item_menu_row"
-                    android:id="@+id/itemLogout" />
+                <include layout="@layout/item_menu_send_feedback_row"
+                    android:id="@+id/item_menu_send_feedback_row" />
 
+                <!-- Log out -->
+                <include layout="@layout/item_logout_row"
+                    android:id="@+id/item_logout_row" />
             </LinearLayout>
 
             <!-- Version Info -->
