@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+
+    <!-- Calendar body -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#CCCCCC"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M8,14 Q8,12 10,12 L54,12 Q56,12 56,14 L56,54 Q56,56 54,56 L10,56 Q8,56 8,54 Z" />
+
+    <!-- Header -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#CCCCCC"
+        android:strokeWidth="3"
+        android:pathData="M8,24 L56,24" />
+
+    <!-- Left pin -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#CCCCCC"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M20,8 L20,16" />
+
+    <!-- Right pin -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#CCCCCC"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M44,8 L44,16" />
+
+    <!-- Grid dots -->
+    <path android:fillColor="#CCCCCC" android:pathData="M20,34 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0" />
+    <path android:fillColor="#CCCCCC" android:pathData="M32,34 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0" />
+    <path android:fillColor="#CCCCCC" android:pathData="M44,34 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0" />
+    <path android:fillColor="#CCCCCC" android:pathData="M20,46 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0" />
+    <path android:fillColor="#CCCCCC" android:pathData="M32,46 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0" />
+
+</vector>
