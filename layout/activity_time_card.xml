@@ -24,7 +24,7 @@
             <Spinner
                 android:id="@+id/monthSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:backgroundTint="#FFFFFF" />
 
             <TextView
@@ -62,10 +62,42 @@
                 android:text="M"
                 android:textColor="#000000"
                 android:textStyle="bold" />
-            <TextView android:layout_width="0dp" android:layout_columnWeight="1" android:text="T" android:textColor="#000000" android:textStyle="bold" android:gravity="center" android:padding="10dp"/>
-            <TextView android:layout_width="0dp" android:layout_columnWeight="1" android:text="W" android:textColor="#000000" android:textStyle="bold" android:gravity="center" android:padding="10dp"/>
-            <TextView android:layout_width="0dp" android:layout_columnWeight="1" android:text="T" android:textColor="#000000" android:textStyle="bold" android:gravity="center" android:padding="10dp"/>
-            <TextView android:layout_width="0dp" android:layout_columnWeight="1" android:text="F" android:textColor="#000000" android:textStyle="bold" android:gravity="center" android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="12dp"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="T"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="W"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="12dp"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="T"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_columnWeight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="F"
+                android:textColor="#000000"
+                android:textStyle="bold" />
             <TextView android:layout_width="0dp" android:layout_columnWeight="1" android:text="S" android:textColor="#000000" android:textStyle="bold" android:gravity="center" android:padding="10dp"/>
         </GridLayout>
 
@@ -107,7 +139,7 @@
             <!-- Month Spinner -->
             <FrameLayout
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:background="@drawable/bg_spinner_dark"
                 android:layout_marginEnd="8dp">
@@ -123,7 +155,7 @@
             <!-- Year Spinner -->
             <FrameLayout
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:background="@drawable/bg_spinner_dark">
 
