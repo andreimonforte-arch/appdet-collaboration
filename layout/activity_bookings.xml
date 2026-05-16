@@ -1,145 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <!-- Main Content -->
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="56dp"
+        android:layout_marginTop="55dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp">
 
-        <!-- Header with Back Button -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_arrow_back_24dp" />
+
+        <TextView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="50dp">
+            android:layout_weight="1"
+            android:text="Build Information"
+            android:textSize="20sp"
+            android:textColor="#1A1A1A"
+            android:gravity="center" />
 
-            <ImageButton
-                android:id="@+id/btnBack"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_arrow_back_24dp"
-                android:contentDescription="Back" />
-
-            <!-- Tab Header -->
-            <LinearLayout
-                android:id="@+id/tabUpcoming"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:paddingVertical="12dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackground">
-
-                <TextView
-                    android:id="@+id/tvTabUpcoming"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Court Schedule"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#1A1A1A" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- Content Area -->
-        <FrameLayout
-            android:id="@+id/contentContainer"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <!-- Empty State -->
-            <LinearLayout
-                android:id="@+id/emptyStateView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="32dp">
-
-                <!-- Illustration Placeholder -->
-                <FrameLayout
-                    android:layout_width="240dp"
-                    android:layout_height="200dp"
-                    android:layout_marginBottom="24dp"
-                    android:background="@drawable/bg_empty_state">
-
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:layout_gravity="center"
-                        android:alpha="0.3"
-                        android:src="@drawable/ic_bookings"
-                        android:contentDescription="No bookings illustration" />
-                </FrameLayout>
-
-                <!-- Title -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:text="You don't have any schedule yet"
-                    android:textAlignment="center"
-                    android:textColor="#1A1A1A"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <!-- Subtitle -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="32dp"
-                    android:text="Another basketball session is coming up — don't miss it!"
-                    android:textAlignment="center"
-                    android:textColor="#666666"
-                    android:textSize="16sp" />
-
-                <!-- CTA Button -->
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnBookNow"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_button_yellow"
-                    android:text="Book now"
-                    android:textAllCaps="false"
-                    android:textColor="#333333"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerBookings"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:visibility="gone" />
-        </FrameLayout>
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
     </LinearLayout>
+
+    <!-- Build Info Rows -->
+    <LinearLayout
+        android:id="@+id/infoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="16dp">
+
+        <!-- Application name -->
+        <include
+            android:id="@+id/itemAppName"
+            layout="@layout/item_build_application_name_row" />
+
+        <!-- Company -->
+        <include
+            android:id="@+id/itemCompany"
+            layout="@layout/item_build_company_name_row" />
+
+        <!-- Copyright -->
+        <include
+            android:id="@+id/itemCopyright"
+            layout="@layout/item_copy_right_name_row" />
+
+        <!-- Version -->
+        <include
+            android:id="@+id/itemVersion"
+            layout="@layout/item_build_version_name_row" />
+
+        <!-- Build -->
+        <include
+            android:id="@+id/itemBuild"
+            layout="@layout/item_build_version_name_row" />
+
+        <!-- React build -->
+        <include
+            android:id="@+id/itemReactBuild"
+            layout="@layout/item_build_react_build_name_row" />
+
+    </LinearLayout>
+
+    <!-- Spacer -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
         android:layout_marginBottom="48dp"
         android:background="#FFFFFF"
         android:elevation="8dp"
+        app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/bottom_nav_colors"
         app:itemTextColor="@color/bottom_nav_colors"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottom_nav_menu" />
+        app:labelVisibilityMode="labeled" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>
