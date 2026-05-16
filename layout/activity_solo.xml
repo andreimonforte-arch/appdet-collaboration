@@ -1,149 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="4dp">
+    android:orientation="vertical"
+    android:layout_marginTop="80dp"
+    android:layout_marginBottom="16dp">
 
+    <!-- Header with Back Button -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp">
 
-        <!-- Image with Overlay -->
-        <FrameLayout
-            android:layout_width="180dp"
-            android:layout_height="140dp">
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_24dp"
+            android:contentDescription="Back" />
 
-            <ImageView
-                android:id="@+id/imgSoloCourt"
-                android:layout_width="179dp"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img_court_solo" />
-
-            <!-- Gradient Overlay -->
-            <View
-                android:layout_width="176dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_gradient_overlay" />
-
-            <!-- Solo Badge -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|start"
-                android:layout_margin="12dp"
-                android:background="#FFC107"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="4dp"
-                android:text="SOLO FRIENDLY"
-                android:textColor="#333333"
-                android:textSize="11sp"
-                android:textStyle="bold" />
-
-            <!-- Matchmaking Status -->
-            <TextView
-                android:id="@+id/tvMatchStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|start"
-                android:layout_margin="12dp"
-                android:text="Matchmaking active"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp" />
-        </FrameLayout>
-
-        <!-- Content -->
-        <LinearLayout
-            android:layout_width="180dp"
+        <TextView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_weight="1"
+            android:text="Solo Court Booking"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A1A"
+            android:gravity="center" />
 
-            <TextView
-                android:id="@+id/tvSoloName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Open Court - Solo Queue"
-                android:textColor="#1A1A1A"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+        <!-- Spacer to balance back button -->
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="We'll find you a team"
-                android:textColor="#666666"
-                android:textSize="14sp" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
 
-            <!-- Player Level Selector -->
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Image with Overlay -->
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:orientation="horizontal">
+                android:layout_height="150dp">
 
+                <!-- Solo Badge -->
+                <ImageView
+                    android:id="@+id/imgSoloCourt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="Solo basketball court image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_court_solo" />
 
-            </LinearLayout>
-
-            <!-- Price & Action -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:layout_gravity="top|start"
+                    android:layout_margin="12dp"
+                    android:background="#FFC107"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="SOLO FRIENDLY"
+                    android:textColor="#333333"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/tvSoloPrice"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="₱300"
-                        android:textColor="#1A1A1A"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                <!-- Matchmaking Status -->
+                <TextView
+                    android:id="@+id/tvMatchStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_margin="12dp"
+                    android:text="Matchmaking active"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+            </FrameLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="per player"
-                        android:textColor="#999999"
-                        android:textSize="12sp" />
+            <!-- Content -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvSoloName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Open Court - Solo"
+                    android:textColor="#1A1A1A"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Join a team instantly"
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
+
+                <!-- Player Level Selector -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
                 </LinearLayout>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnJoinQueue"
-                    android:layout_width="88dp"
-                    android:layout_height="44dp"
-                    android:backgroundTint="#FFC107"
-                    android:paddingHorizontal="24dp"
-                    android:text="Join"
-                    android:textAllCaps="false"
-                    android:textColor="#333333"
-                    android:textSize="15sp" />
+                <!-- Price & Action -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvSoloPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₱300"
+                            android:textColor="#1A1A1A"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="per player"
+                            android:textColor="#999999"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnJoinQueue"
+                        android:layout_width="88dp"
+                        android:layout_height="44dp"
+                        android:backgroundTint="#FFC107"
+                        android:paddingHorizontal="24dp"
+                        android:text="Join"
+                        android:textAllCaps="false"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <!-- Queue Info -->
+                <TextView
+                    android:id="@+id/tvQueueInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Open Court Active"
+                    android:textColor="#999999"
+                    android:textSize="12sp" />
+
             </LinearLayout>
 
-            <!-- Queue Info -->
-            <TextView
-                android:id="@+id/tvQueueInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="3 players waiting • Est. match in 5 min"
-                android:textColor="#999999"
-                android:textSize="12sp" />
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/bg_gradient_overlay" />
         </LinearLayout>
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
