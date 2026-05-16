@@ -8,11 +8,14 @@
     android:background="#FFFFFF">
 
     <!-- Header -->
+
+    <!-- Menu Items -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:orientation="horizontal"
+        android:layout_marginTop="55dp"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:paddingHorizontal="16dp">
 
         <ImageButton
@@ -27,14 +30,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="Settings"
-            android:textSize="20sp"
             android:textColor="#1A1A1A"
-            android:gravity="center" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
-    <!-- Menu Items -->
     <LinearLayout
         android:id="@+id/menuContainer"
         android:layout_width="match_parent"
@@ -68,9 +70,11 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
         android:background="#FFFFFF"
         android:elevation="8dp"
+        android:paddingBottom="12dp"
         app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/bottom_nav_colors"
         app:itemTextColor="@color/bottom_nav_colors"
