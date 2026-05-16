@@ -4,20 +4,55 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginTop="80dp"
     android:layout_marginBottom="16dp">
+
+    <!-- Header with Back Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_24dp"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Half Court Booking"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A1A"
+            android:gravity="center" />
+
+        <!-- Spacer to balance back button -->
+    </LinearLayout>
 
     <!-- Full Width Image -->
     <FrameLayout
-        android:layout_width="206dp"
+        android:layout_width="match_parent"
         android:layout_height="160dp">
 
         <!-- Team Badge -->
+
+        <!-- Capacity Badge -->
+
         <ImageView
             android:id="@+id/imgHalfCourt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bg_halfcourt_image"
+            android:background="@drawable/img_court_3v3"
             android:clipToOutline="true"
+            android:contentDescription="Basketball half court image"
             android:scaleType="centerCrop"
             android:src="@drawable/img_court_3v3" />
 
@@ -34,7 +69,6 @@
             android:textSize="11sp"
             android:textStyle="bold" />
 
-        <!-- Capacity Badge -->
         <TextView
             android:id="@+id/tvHalfCapacity"
             android:layout_width="wrap_content"
@@ -51,9 +85,9 @@
 
     <!-- Info Row -->
     <LinearLayout
-        android:layout_width="191dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="24dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -65,16 +99,16 @@
 
             <TextView
                 android:id="@+id/tvHalfName"
-                android:layout_width="83dp"
-                android:layout_height="wrap_content"
+                android:layout_width="148dp"
+                android:layout_height="34dp"
                 android:text="Half Court 3v3"
                 android:textColor="#1A1A1A"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="133dp"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
                 android:layout_marginTop="2dp"
                 android:text="Half court • Book as team"
                 android:textColor="#999999"
@@ -89,15 +123,17 @@
             android:textColor="#1A1A1A"
             android:textSize="18sp"
             android:textStyle="bold" />
+
     </LinearLayout>
 
     <!-- Book Team Button -->
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBookHalf"
-        android:layout_width="214dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="#1A1A1A"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#ffa500"
         android:text="Book Team Slot"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
