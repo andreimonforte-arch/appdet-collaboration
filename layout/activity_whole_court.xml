@@ -4,23 +4,54 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginTop="80dp"
     android:layout_marginBottom="16dp">
+
+    <!-- Header with Back Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back_24dp"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Whole Court Booking"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#1A1A1A"
+            android:gravity="center" />
+
+        <!-- Spacer to balance back button -->
+    </LinearLayout>
 
     <!-- Full Width Image -->
     <FrameLayout
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="160dp">
 
         <ImageView
             android:id="@+id/imgWholeCourt"
-            android:layout_width="197dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bg_wholecourt_image"
+            android:background="@drawable/img_court_5v5"
             android:clipToOutline="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_court_5v5" />
+            android:src="@drawable/img_court_5v5"
+            android:contentDescription="Basketball court image" />
 
-        <!-- Team Badge -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,7 +65,6 @@
             android:textSize="11sp"
             android:textStyle="bold" />
 
-        <!-- Capacity Badge -->
         <TextView
             android:id="@+id/tvWholeCapacity"
             android:layout_width="wrap_content"
@@ -51,9 +81,9 @@
 
     <!-- Info Row -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="99dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="24dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -94,10 +124,10 @@
     <!-- Book Team Button -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBookWhole"
-        android:layout_width="184dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="#1A1A1A"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#ffa500"
         android:text="Book Team Slot"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
