@@ -4,13 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="55dp"
     android:background="#FFFFFF">
 
     <!-- Scrollable Content -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="56dp">
+        android:layout_marginBottom="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,13 +19,15 @@
             android:orientation="vertical">
 
             <!-- Search Bar -->
+
+            <!-- Page Indicator -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:background="@drawable/bg_search_bar"
                 android:layout_margin="16dp"
+                android:background="@drawable/bg_search_bar"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:paddingHorizontal="16dp">
 
                 <ImageView
@@ -37,75 +40,60 @@
                     android:id="@+id/etSearch"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:background="@null"
                     android:hint="Search for a hoop hub"
-                    android:textSize="14sp"
+                    android:inputType="text"
                     android:textColor="#333333"
                     android:textColorHint="#999999"
-                    android:background="@null"
-                    android:inputType="text" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
-
-            <!-- Page Indicator -->
             <LinearLayout
                 android:id="@+id/promoIndicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="12dp"
-                android:layout_marginBottom="8dp">
-
-                <View
-                    android:id="@+id/dot1"
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:background="@drawable/dot_active"
-                    android:layout_marginEnd="8dp" />
-
-                <View
-                    android:id="@+id/dot2"
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:background="@drawable/dot_inactive" />
-            </LinearLayout>
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal" />
 
             <!-- Hoophub Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hoop hub"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="#1A1A1A"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                android:text="Hoop hub"
+                android:textColor="#1A1A1A"
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
             <!-- Hoophub Grid -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerHoophub"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="16dp"
-                android:clipToPadding="false" />
+                android:clipToPadding="false"
+                android:paddingHorizontal="16dp" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
         android:layout_gravity="bottom"
         android:background="#FFFFFF"
         android:elevation="8dp"
-        app:menu="@menu/bottom_nav_menu"
+        android:paddingBottom="12dp"
         app:itemIconTint="@color/bottom_nav_colors"
         app:itemTextColor="@color/bottom_nav_colors"
-        app:labelVisibilityMode="labeled" />
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
