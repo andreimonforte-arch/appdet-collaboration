@@ -12,14 +12,23 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Tab Header -->
+        <!-- Header with Back Button -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:gravity="center_vertical"
+            android:layout_marginTop="50dp">
 
-            <!-- Upcoming Tab -->
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back_24dp"
+                android:contentDescription="Back" />
+
+            <!-- Tab Header -->
             <LinearLayout
                 android:id="@+id/tabUpcoming"
                 android:layout_width="0dp"
@@ -36,57 +45,13 @@
                     android:id="@+id/tvTabUpcoming"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Upcoming"
+                    android:text="Court Schedule"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="#1A1A1A" />
-
-                <!-- Active Indicator -->
-                <View
-                    android:id="@+id/indicatorUpcoming"
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/tab_indicator_active" />
             </LinearLayout>
 
-            <!-- Past Tab -->
-            <LinearLayout
-                android:id="@+id/tabPast"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:paddingVertical="12dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="?attr/selectableItemBackground">
-
-                <TextView
-                    android:id="@+id/tvTabPast"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Past"
-                    android:textSize="16sp"
-                    android:textColor="#999999" />
-
-                <!-- Inactive Indicator -->
-                <View
-                    android:id="@+id/indicatorPast"
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginTop="8dp"
-                    android:background="#E0E0E0"
-                    android:visibility="invisible" />
-            </LinearLayout>
         </LinearLayout>
-
-        <!-- Divider Line -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#E0E0E0" />
 
         <!-- Content Area -->
         <FrameLayout
@@ -96,9 +61,6 @@
             android:layout_weight="1">
 
             <!-- Empty State -->
-
-            <!-- RecyclerView for actual bookings (hidden by default) -->
-
             <LinearLayout
                 android:id="@+id/emptyStateView"
                 android:layout_width="match_parent"
@@ -109,8 +71,6 @@
                 android:padding="32dp">
 
                 <!-- Illustration Placeholder -->
-
-                <!-- Title -->
                 <FrameLayout
                     android:layout_width="240dp"
                     android:layout_height="200dp"
@@ -122,9 +82,11 @@
                         android:layout_height="64dp"
                         android:layout_gravity="center"
                         android:alpha="0.3"
-                        android:src="@drawable/ic_bookings" />
+                        android:src="@drawable/ic_bookings"
+                        android:contentDescription="No bookings illustration" />
                 </FrameLayout>
 
+                <!-- Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -140,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="32dp"
-                    android:text="Another basketball session is coming up — don’t miss it!"
+                    android:text="Another basketball session is coming up — don't miss it!"
                     android:textAlignment="center"
                     android:textColor="#666666"
                     android:textSize="16sp" />
@@ -172,6 +134,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:layout_marginBottom="48dp"
         android:background="#FFFFFF"
         android:elevation="8dp"
         app:itemIconTint="@color/bottom_nav_colors"
