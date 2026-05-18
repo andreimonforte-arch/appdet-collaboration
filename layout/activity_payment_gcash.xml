@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maya Payment Method"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#00A859"
+        android:layout_marginBottom="20dp" />
+
+    <EditText
+        android:id="@+id/etFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name "
+        android:inputType="textPersonName"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:id="@+id/layoutMayaNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/etMayaNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Maya Number (09XXXXXXXXX)"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:padding="12dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutCardDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/etCardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Card Number (16 digits)"
+            android:inputType="number"
+            android:padding="12dp"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etExpiry"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="MM/YY"
+                android:inputType="text"
+                android:maxLength="5"
+                android:padding="12dp"
+                android:layout_marginEnd="5dp"/>
+
+            <EditText
+                android:id="@+id/etCvv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="CVV"
+                android:inputType="numberPassword"
+                android:maxLength="3"
+                android:padding="12dp"
+                android:layout_marginStart="5dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnPayAndPrint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#00A859"
+        android:textColor="#FFFFFF"
+        android:text="Pay &amp; Print Receipt" />
+
+</LinearLayout>
